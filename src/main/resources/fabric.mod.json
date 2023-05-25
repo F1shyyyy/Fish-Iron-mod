@@ -1,0 +1,43 @@
+{
+	"schemaVersion": 1,
+	"id": "testmod",
+	"version": "${version}",
+	"name": "Test Mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"F1shyyyy"
+	],
+	"contact": {
+		"homepage": "https://twitter.com/FishyCz",
+		"sources": ""
+	},
+	"license": "CC BY-SA 4.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"f1shyyyy.testmod.TestMod"
+		],
+		"client": [
+			"f1shyyyy.testmod.TestModClient"
+		],
+		"fabric-datagen": [
+			"f1shyyyy.testmod.TestModDataGenerator"
+		]
+	},
+	"mixins": [
+		"testmod.mixins.json",
+		{
+			"config": "testmod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.20",
+		"minecraft": "~1.19.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
